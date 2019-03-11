@@ -1,0 +1,29 @@
+version: '3'
+services:
+  asset-mongo:
+    image: mongo:3.6
+    container_name: asset-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - $HOME/assetmanager/data/asset-mongo-data:/data/db
+      - $HOME/assetmanager/data/asset-mongo-bkp:/data/bkp
+    restart: always
+
+  asset-manager:
+     build: .
+     restart: always
+     container_name: asset-manager
+     ports:
+       - "80:8080"
+     working_dir: /opt/app
+     expose:
+       - 8080
+       - 80
+     environment:
+       - AWS_ACCESS_KEY=YOUR_AWS_ACCESS_KEY
+       - AWS_SECRET_KEY=YOUR_AWS_SECRET_KEY
+       - AWS_BUCKET=BUCKET_NAME
+       - AWS_REGION=YOUR_AWS_REGION
+     depends_on:
+       - asset-mongo
