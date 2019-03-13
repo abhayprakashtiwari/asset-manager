@@ -15,8 +15,6 @@
 At the project root level, run:
 ```mvn test```
 
-### Configurations:
-
 
 ### To run tests and build:
 At the project root level, run:

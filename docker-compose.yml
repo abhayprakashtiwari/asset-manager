@@ -17,9 +17,6 @@ services:
      ports:
        - "80:8080"
      working_dir: /opt/app
-     expose:
-       - 8080
-       - 80
      environment:
        - AWS_ACCESS_KEY=YOUR_AWS_ACCESS_KEY
        - AWS_SECRET_KEY=YOUR_AWS_SECRET_KEY
