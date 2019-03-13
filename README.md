@@ -47,13 +47,13 @@ At the project root level, run:
   - AWS_SECRET_KEY
   - AWS_BUCKET
   - AWS_REGION
-###### At the project root level, run command:
+##### At the project root level, run command:
 ```docker-compose up```
 
 ### To deploy on an instance
 1. Ensure mongo service running and java 8 installed
 2. Copy the assetmanager.jar from target to the directory where you want to deploy
-3. run ```java -jar -Dspring.data.mongodb.database=*db_name* -Dspring.data.mongodb.host=*mongo_host* -Dspring.data.momgodb.port=*mongo_port* -DAWS_ACCESS_KEY=*your_access_key* -DAWS_SECRET_KEY=*your_secret_key* -DAWS_BUCKET=*bucket_name* -DAWS_REGION=*aws_region_name* assetmanager.jar >> assetmanager.log &```
+3. run ```java -jar -Dspring.data.mongodb.database={db_name} -Dspring.data.mongodb.host={mongo_host} -Dspring.data.momgodb.port={mongo_port} -DAWS_ACCESS_KEY={your_access_key} -DAWS_SECRET_KEY={your_secret_key} -DAWS_BUCKET={bucket_name} -DAWS_REGION={aws_region_name} assetmanager.jar >> assetmanager.log &```
 
 
 ### api to run health check for the application
